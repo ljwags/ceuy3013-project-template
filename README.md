@@ -4,6 +4,8 @@
 *this file must serve as the documentation of your project, how your program*
 *should be used along with examples.*
 
+---
+
 This is the final project for *CE-UY 3013 Computing In Civil Engineering*.
 Your project must follow this template and must be hosted on GitHub. Pay
 attention to the contents of this repository.

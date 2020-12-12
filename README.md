@@ -12,10 +12,6 @@ attention to the contents of this repository.
 
 ```
 .
-├── input (optional)
-│   └── README.md
-├── output (optional)
-│   └── README.md
 ├── .gitignore
 ├── README.md
 ├── requirements.txt

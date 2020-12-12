@@ -1,6 +1,6 @@
 # Transportation Geometric Design Project
 
-*This is the final project for *CE-UY 3013 Computing In Civil Engineering*.*
+*This is my final project for *CE-UY 3013 Computing In Civil Engineering*.*
 *It demostrates vertical and horizontal alignment procedures for highways and streets*
 *according to AASHTO Design Guidelines.*
 

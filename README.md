@@ -42,12 +42,15 @@ Outputs:
 * length of long chord (LC)
 * horizontal curve visualization
 
+<img src="horizontaleg.jpeg" width="300" height ="300">
+
 *Vertical Alignment*
 
 * stopping sight distance
 * length of curve
 * vertical curve visualization
 
+<img src="verticaleg.jpeg" width="300" height ="300">
 
 
 ## Setup
@@ -78,7 +81,6 @@ $ pip install -r requirements.txt
 
 ## How to use the program
 
-<img src="https://storage.googleapis.com/nm-static/computing_maloof2_20200927.png" alt="nyu_comp_f20" style="max-height:100px">
 
 Here is how we can analyze the truss above.
 

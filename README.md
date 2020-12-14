@@ -88,7 +88,7 @@ Let's use a fictitious State Route 18 and determine the horizontal and vertical 
 
 First instantiate a new object of ``Horizontal Alignment``:
 
-*In this we include the (x-coordinate, y-coordinate, speed, tangent length), all of which should be given.*
+*In this, we include the (x-coordinate, y-coordinate, speed, tangent length), all of which should be given.*
 
 ```python
 >>> stateroute18h = HorizontalAlignment(2,5,60,3000)
@@ -103,7 +103,7 @@ Now, we can visualize the horizontal alignment:
 
 Let's try vertical alignment for the same State Route 18!
 
-*In this we include the (x-coordinate, y-coordinate, grade of back tangent, grade of forward tangent, speed, type of curve), all of which should be given.*
+*In this, we include the (x-coordinate, y-coordinate, grade of back tangent, grade of forward tangent, speed, type of curve), all of which should be given.*
 
 ```python
 >>> stateroute18v = VerticalAlignment(2,5,-0.5,0.2,60,'sag')
@@ -112,5 +112,21 @@ Let's try vertical alignment for the same State Route 18!
 Now, we can visualize the vertical alignment:
 
 ```python
->>> print(truss.solve())
+>>> stateroute18v.solve()
 ```
+
+Lastly, we can gather other data. For example:
+
+```python
+>>> stateroute18h.radius()
+```
+
+*This gives us the radius of the horizontal curve.*
+
+```python
+>>> stateroute18v.curvecheck()
+```
+
+*This gives us the length of the vertical curve used for the alignment.
+
+If there are any questions or concerns, please do not hesitate to reach out, hope you enjoy. :)

@@ -52,7 +52,8 @@ class HorizontalAlignment:
             return (self.radius()*(1-np.cos((self.intersectangle()*(np.pi/180))/2)))
 
     def externaldist(self):
-        """ This calculates the external distance, E on the horizontal curve diagram.
+        """ This calculates the external distance, E on the horizontal curve diagram. This is not necessary for plotting
+        the curve however it can be help if solving for PI, point of intersection.
         """
         if self.radius() and self.intersectangle():
             return (self.radius()*((1/np.cos((self.intersectangle()*(np.pi/180))/2)-1)))

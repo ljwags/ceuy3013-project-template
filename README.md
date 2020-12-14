@@ -34,7 +34,7 @@ Outputs:
 
 *Horizontal Alignment*
 
-* radius of curve
+* radius of curve (R)
 * intersection angle (I)
 * point of tangent (PT)
 * length of middle ordinate (M)

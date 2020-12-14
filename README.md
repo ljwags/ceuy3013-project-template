@@ -56,6 +56,8 @@ Outputs:
 
 ## Setup
 
+*Forked from demo*
+
 In order to use the program, you have to clone/download this repository,
 navigate to the local directory and create a virtual environment with:
 

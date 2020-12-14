@@ -6,7 +6,7 @@
 
 ---
 
-This program calculates the horizontal and vertical alignment of roadways with a given starting point, other raodway characteristics.
+This program calculates the horizontal and vertical alignment of a roadway with a given starting point and other characteristics.
 The program acts as road builder to determine where the end of the curve should be. All of the specifications can be found in **AASHTO A Policy on Geometric Design of Highways and Streets** most specifically Chapter 3 Elements of Design. This program is designed for U.S. customary units.
 
 Assumptions:

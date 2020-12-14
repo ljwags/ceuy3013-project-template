@@ -85,28 +85,31 @@ $ pip install -r requirements.txt
 
 Here is how we can determine the horizontal and/or vertical alignment of a potential roadway.
 Let's use a fictitious State Route 18 and determine the horizontal and vertical alignment with the given characteristics.
+
 First instantiate a new object of ``Horizontal Alignment``:
 
-*In this we include the (x-coordinate, y-coordinate, speed, tangent length), all of which should be given.
+*In this we include the (x-coordinate, y-coordinate, speed, tangent length), all of which should be given.*
 
 ```python
 >>> stateroute18h = HorizontalAlignment(2,5,60,3000)
 ```
 
-Next, we can add the members:
+Now, we can visualize the horizontal alignment:
 
 ```python
->>> truss.add_member((0, 0, False), (3, 0, True))
+>>> stateroute18h.solve()
 >>> truss.add_member((0, 0, False), (3, 4, True))
 ```
 
-Let's add a load:
+Let's try vertical alignment for the same State Route 18!
+
+*In this we include the (x-coordinate, y-coordinate, grade of back tangent, grade of forward tangent, speed, type of curve), all of which should be given.*
 
 ```python
->>> truss.add_load((0,0), (0, -2))
+>>> stateroute18v = VerticalAlignment(2,5,-0.5,0.2,60,'sag')
 ```
 
-Finally we can analyze the truss and print the results:
+Now, we can visualize the vertical alignment:
 
 ```python
 >>> print(truss.solve())

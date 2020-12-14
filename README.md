@@ -52,6 +52,7 @@ Outputs:
 
 <img src="verticaleg.jpeg" width="300" height ="300">
 
+*Images from FE Reference Handbook*
 
 ## Setup
 
@@ -82,12 +83,14 @@ $ pip install -r requirements.txt
 ## How to use the program
 
 
-Here is how we can analyze the truss above.
+Here is how we can determine the horizontal and/or vertical alignment of a potential roadway.
+Let's use a fictitious State Route 18 and determine the horizontal and vertical alignment with the given characteristics.
+First instantiate a new object of ``Horizontal Alignment``:
 
-First instantiate a new object of ``SimpleTruss``:
+*In this we include the (x-coordinate, y-coordinate, speed, tangent length), all of which should be given.
 
 ```python
->>> truss = SimpleTruss('My first truss')
+>>> stateroute18h = HorizontalAlignment(2,5,60,3000)
 ```
 
 Next, we can add the members:

@@ -7,26 +7,33 @@
 ---
 
 This program calculates the horizontal and vertical alignment of roadways with a given starting point, other raodway characteristics.
-The program acts as road builder to determine where the end of the curve should be. 
+The program acts as road builder to determine where the end of the curve should be. All of the specifications can be found in **AASHTO A Policy on Geometric Design of Highways and Streets** most specifically Chapter 3 Elements of Design. This program is designed for U.S. customary units.
 
 Assumptions:
-* super elevation is equal to 0.10 which common use for highwats with snow and ice cited in Section 3.3.3.2 
-* linear elastic behavior
-* load is applied at the joints
-* the support joint must be constrained of translational movement
+* super elevation is equal to 0.10 which common use for highways with snow and ice cited in Section 3.3.3.2
+* side friction factor is equal to 0.15 which is common for a 70 mph highway, this can vary greatly as it accounts for type of vehicle, condition of
+roadway, and condition of tires
+* one lane is traveling in each direction with no median (no case adjustment factor used)
 
 Inputs:
+
 *Horizontal Alignment*
+
 * x and y coordinate of at startion point of curve
-* speed
-* tangent line length
+* speed (mph)
+* tangent line length (ft)
+
 *Vertical Alignment*
+
 * x and z coordinate of at startion point of curve
+* speed (mph)
 * grades of back and forward tangents
 * type of vertical curve (crest or sag)
 
 Outputs:
+
 *Horizontal Alignment*
+
 * radius of curve
 * intersection angle (I)
 * point of tangent (PT)
@@ -34,7 +41,9 @@ Outputs:
 * external distance (E)
 * length of long chord (LC)
 * horizontal curve visualization
+
 *Vertical Alignment*
+
 * stopping sight distance
 * length of curve
 * vertical curve visualization

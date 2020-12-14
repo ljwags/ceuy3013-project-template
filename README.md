@@ -1,86 +1,99 @@
 # Transportation Geometric Design Project
 
 *This is my final project for *CE-UY 3013 Computing In Civil Engineering*.*
-*It demostrates vertical and horizontal alignment procedures for highways and streets*
+*It demostrates horizontal and vertical alignment procedures for highways and streets*
 *according to AASHTO Design Guidelines.*
 
 ---
 
-This is the final project for *CE-UY 3013 Computing In Civil Engineering*.
-Your project must follow this template and must be hosted on GitHub. Pay
-attention to the contents of this repository.
+This program calculates the horizontal and vertical alignment of roadways with a given starting point, other raodway characteristics.
+The program acts as road builder to determine where the end of the curve should be. 
+
+Assumptions:
+* super elevation is equal to 0.10 which common use for highwats with snow and ice cited in Section 3.3.3.2 
+* linear elastic behavior
+* load is applied at the joints
+* the support joint must be constrained of translational movement
+
+Inputs:
+*Horizontal Alignment*
+* x and y coordinate of at startion point of curve
+* speed
+* tangent line length
+*Vertical Alignment*
+* x and z coordinate of at startion point of curve
+* grades of back and forward tangents
+* type of vertical curve (crest or sag)
+
+Outputs:
+*Horizontal Alignment*
+* radius of curve
+* intersection angle (I)
+* point of tangent (PT)
+* length of middle ordinate (M)
+* external distance (E)
+* length of long chord (LC)
+* horizontal curve visualization
+*Vertical Alignment*
+* stopping sight distance
+* length of curve
+* vertical curve visualization
+
+
+
+## Setup
+
+In order to use the program, you have to clone/download this repository,
+navigate to the local directory and create a virtual environment with:
 
 ```
-.
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── source.py
-└── test.py
+$ python3 -m venv venv
 ```
 
-Your project must have exactly the same structure, with exactly the same
-file names, except for the ``input`` and ``output`` directories that are
-optional and should only be used if you write a program that processes
-one or more data files. Here are two examples of proper use of the input and
-output directories: [ex1](https://github.com/InsightDataScience/Purchase-Analytics), [ex2](https://github.com/InsightDataScience/h1b_statistics)
+Then, activate the virtual environment:
+
+```
+For Linux/Mac OS:
+$ source venv/bin/activate
+
+For Windows:
+> venv\Scripts\activate
+```
+
+Finally, install the required libraries for this program with:
+
+```
+$ pip install -r requirements.txt
+```
 
 
-## Requirements
+## How to use the program
 
-*Python 3 projects only, no Python 2.*
+<img src="https://storage.googleapis.com/nm-static/computing_maloof2_20200927.png" alt="nyu_comp_f20" style="max-height:100px">
 
-This will be a solo project, the requirements are such that can be comfortably
-handled by a single student. The goal is to write a program that performs a
-series of **meaningful** tasks within Civil Engineering and can be easily used
-by others. This requires code that is clean, comprehensible, does not return
-unexpected errors and is accompanied by sufficient documentation.
+Here is how we can analyze the truss above.
 
-What is a *meaningful* task? There is really no need to overthink this. In this
-course we looked at examples from structural analysis, pile foundations,
-traffic engineering and more. In other courses you were introduced to the
-methods and processes governing environmental engineering, steel design, concrete design, engineering mechanics, project management, fluid mechanics, water resources
-engineering, geotechnical engineering and much more. These methods and processes
-involve a series of manual calculations and checks considering multiple parameters.
+First instantiate a new object of ``SimpleTruss``:
 
-If I asked you to produce a flowchart of the process you followed in most of the
-assignments you have tackled so far in this program, you would have done so
-without much trouble. My point here is that you have been working with algorithms
-for quite some time already, now is the time to pick one of significant value and
-complexity and implement it in Python. From my experience, any analytical
-process that relies on a reference manual can be implemented in Python.
+```python
+>>> truss = SimpleTruss('My first truss')
+```
 
-You will have to submit your project proposal for approval first. Do so ASAP on
-NYU Classes. All projects must be unique, rule of dibs applies.
+Next, we can add the members:
 
+```python
+>>> truss.add_member((0, 0, False), (3, 0, True))
+>>> truss.add_member((0, 0, False), (3, 4, True))
+```
 
-## Grading
+Let's add a load:
 
-* Practicality: 30%
-* Execution: 50%
-* Documentation and examples: 20%
+```python
+>>> truss.add_load((0,0), (0, -2))
+```
 
-**Practicality:** Use common sense, this is an assignment that weighs 20% on your
-final grade, a simple program won't cut it. Use your combined effort on all class
-assignments as a reference (they also weigh 20% on your grade) Focus on preparing
-a thorough project proposal so that your instructor can comment on the usefulness
-of your project. At the same time, think how your project will benefit yourself
-and your colleagues (i.e. will this tool make you more efficient with your
-coursework? is this a tool that simplifies tedious and error-prone calculations?
-does this tool produce visualizations?)
+Finally we can analyze the truss and print the results:
 
-**Execution:** Clean, error-free code with lots of comments is key. Once again,
-use common sense: it is probably best to make it easy for the grader to go
-through the code than have them struggle to understand what's happening.
-Absolutely no unexpected errors, make sure to test your code before submitting.
-
-**Documentation and examples:** This README file presents the project description
-right now but for your project it must provide a detailed description of your
-program, and how it should be used with examples. Make sure to check this
-[Markdown guide](https://guides.github.com/features/mastering-markdown/)
-for tips on how to better present your work.
-
-
-Your submission will go undergo several plagiarism checks. There is risk of a
-failing score, without warning, if it becomes evident that your code comes from
-other public projects.
+```python
+>>> print(truss.solve())
+```

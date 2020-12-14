@@ -98,7 +98,6 @@ Now, we can visualize the horizontal alignment:
 
 ```python
 >>> stateroute18h.solve()
->>> truss.add_member((0, 0, False), (3, 4, True))
 ```
 
 Let's try vertical alignment for the same State Route 18!
@@ -127,6 +126,6 @@ Lastly, we can gather other data. For example:
 >>> stateroute18v.curvecheck()
 ```
 
-*This gives us the length of the vertical curve used for the alignment.
+*This gives us the length of the vertical curve used for the alignment.*
 
-If there are any questions or concerns, please do not hesitate to reach out, hope you enjoy. :)
+**If there are any questions or concerns, please do not hesitate to reach out, hope you enjoy.** :)
